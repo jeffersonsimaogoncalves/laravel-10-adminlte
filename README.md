@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://adminlte.io/wp-content/uploads/2021/03/logo.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://adminlte.io/wp-content/uploads/2021/03/logo.png" width="400" alt="Admin LTE Logo"></a></p>
 
 ## About Laravel
 
@@ -11,6 +11,8 @@ This project is made in Laravel version 10. In this project i used a Admin LTE w
 git clone https://github.com/Nihirz/laravel-10-adminlte.git
 ```
 
+- Go into folder
+
 ```
 cd laravel-10-adminlte
 ```
@@ -20,6 +22,25 @@ cd laravel-10-adminlte
 ```
 composer update
 ```
+
+- After the updation you have to create the ```.env``` file via this command.
+
+```
+cp .env.example .env
+```
+
+- Now you have to generate the product key.
+
+```
+php artisan key:generate
+```
+
+- Now migrate the database tables.
+
+```
+php artisan migrate
+```
+
 
 ## Security Vulnerabilities
 
