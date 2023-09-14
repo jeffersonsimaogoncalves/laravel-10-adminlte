@@ -41,10 +41,15 @@ php artisan key:generate
 php artisan migrate
 ```
 
+- We are done here. Now you have to just serve your project.
+
+```
+php artisan serve
+```
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Nihir Zala via [testnihir@gmail.com](mailto:testnihir@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please send an e-mail to Nihir Zala via [testnihir@gmail.com](mailto:testnihir@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
