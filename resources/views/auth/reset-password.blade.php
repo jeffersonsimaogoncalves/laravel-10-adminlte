@@ -1,11 +1,13 @@
 <x-guest-layout>
     <!-- Password -->
-
+    @section('title')
+        {{ 'Reset Your Password' }}
+    @endsection
 
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+                <a href="/" class="h1"><b>Admin</b>LTE</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">You are only one step a way from your new password, recover your password now.
@@ -14,8 +16,7 @@
                     @csrf
                     <input type="hidden" name="token" value="{{ $request->route('token') }}">
                     <div class="input-group mb-3">
-                        <input id="email" class="form-control" type="email" name="email"
-                            :value="old('email', $request - > email)" required autofocus autocomplete="username" disabled>
+                        <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" readonly />
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -34,8 +35,9 @@
                         <x-input-error :messages="$errors->get('password')" class="text-danger" />
                     </div>
                     <div class="input-group mb-3">
-                        <input id="password_confirmation" class="form-control" type="password" name="password_confirmation"
-                        required autocomplete="new-password" placeholder="Confirm Password">
+                        <input id="password_confirmation" class="form-control" type="password"
+                            name="password_confirmation" required autocomplete="new-password"
+                            placeholder="Confirm Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

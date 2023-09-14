@@ -8,6 +8,7 @@
                 <a href="/" class="h1"><b>Admin</b>LTE</a>
             </div>
             <div class="card-body">
+                <x-auth-session-status class="mb-4" :status="session('status')" />
                 <p class="login-box-msg">Forgot your password? No problem. Just let us know your email address and we
                     will email you a password reset link that will allow you to choose a new one.</p>
                 <form action="{{ route('password.email') }}" method="POST">
