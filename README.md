@@ -46,6 +46,21 @@ php artisan migrate
 ```
 php artisan serve
 ```
+- if you want to use the admin side but you have no idea about component & how here things are work. so that you just have to create file & put your code.
+
+```php
+<x-admin>
+    {{ 'Put your blade code here' }}
+</x-admin>
+```
+
+- For the page title use a section method Like this.
+
+```php
+    @section('title')
+        {{'Your Titlte'}}
+    @endsection
+```
 
 ## Security Vulnerabilities
 
