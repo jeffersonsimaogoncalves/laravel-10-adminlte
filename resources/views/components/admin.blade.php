@@ -71,6 +71,7 @@
 
             <!-- Main content -->
             <section class="content">
+                <x-alert />
                 <!-- Default box -->
                 {{ $slot }}
                 <!-- /.card -->
