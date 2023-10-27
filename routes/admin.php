@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::resource('user',UserController::class);
     Route::group(['middleware' => ['role:user']], function () {
         // add your user routes or simple admin routes here
+        Route::resource('role',RoleController::class);
     });
     Route::group(['middleware' => ['role:admin']], function () {
         // add your admin routes here        

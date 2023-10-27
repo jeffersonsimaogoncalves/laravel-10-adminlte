@@ -19,5 +19,13 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.role.index') }}" class="nav-link {{ Route::is('admin.role.index') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-hat-cowboy"></i>
+                <p>
+                    Role
+                </p>
+            </a>
+        </li>
     </ul>
 </nav>
