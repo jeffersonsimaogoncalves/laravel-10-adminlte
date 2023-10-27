@@ -1,3 +1,12 @@
+<!--
+/*!
+ *   AdminLTE With Laravel
+ *   Author: Nihir Zala
+ *   Website: nihirz.netlify.app
+ *   License: Open source - MIT <https://opensource.org/licenses/MIT>
+ */
+-->
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
