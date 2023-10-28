@@ -27,5 +27,13 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.permission.index') }}" class="nav-link {{ Route::is('admin.permission.index') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-hat-cowboy"></i>
+                <p>
+                    Permission
+                </p>
+            </a>
+        </li>
     </ul>
 </nav>
