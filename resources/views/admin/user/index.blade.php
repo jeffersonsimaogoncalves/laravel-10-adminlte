@@ -6,7 +6,6 @@
         <div class="card-header">
             <h3 class="card-title">User Table</h3>
         </div>
-
         <div class="card-body p-0">
             <table class="table table-striped">
                 <thead>

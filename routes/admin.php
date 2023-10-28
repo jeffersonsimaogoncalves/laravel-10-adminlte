@@ -11,11 +11,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('user',UserController::class);
-    Route::group(['middleware' => ['role:user']], function () {
-        // add your user routes or simple admin routes here
-        Route::resource('role',RoleController::class);
-    });
-    Route::group(['middleware' => ['role:admin']], function () {
-        // add your admin routes here        
-    });
+    Route::resource('role',RoleController::class);
 });
