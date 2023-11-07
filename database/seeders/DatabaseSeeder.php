@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-use App\Models\UiMode;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -33,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ])->assignRole($user);
 
-        UiMode::crate([
+        \App\Models\UiMode::create([
             'mode'=>'light',
         ]);
     }
