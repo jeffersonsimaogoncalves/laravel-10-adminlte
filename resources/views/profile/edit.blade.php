@@ -12,6 +12,11 @@
 
             <div class="p-4 sm:p-8 bg-dark shadow sm:rounded-lg mb-3">
                 <div class="max-w-xl">
+                    @include('profile.partials.ui-mode')
+                </div>
+            </div>
+            <div class="p-4 sm:p-8 bg-dark shadow sm:rounded-lg mb-3">
+                <div class="max-w-xl">
                     @include('profile.partials.update-password-form')
                 </div>
             </div>

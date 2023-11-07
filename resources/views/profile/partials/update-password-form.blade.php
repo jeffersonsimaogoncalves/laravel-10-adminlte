@@ -35,13 +35,11 @@
             <button class="btn btn-primary btn-sm" type="submit">{{ __('Save') }}</button>
 
             @if (session('status') === 'password-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ 'Saved' }}
+                <button type="button" class="btn btn-sm float-end float-right" data-bs-dismiss="alert"
+                    aria-label="Close">&times;</button>
+            </div>
             @endif
         </div>
     </form>
