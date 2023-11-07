@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+<nav class="main-header navbar navbar-expand navbar-{{ Auth::user()->mode }} navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -9,13 +9,6 @@
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-        <!-- Navbar Search -->
-
-
-        <!-- Messages Dropdown Menu -->
-
-        <!-- Notifications Dropdown Menu -->
-
         <li class="nav-item">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

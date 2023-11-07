@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed dark-mode">
+<body class="hold-transition sidebar-mini layout-fixed {{ Auth::user()->mode }}-mode">
 
     <div class="wrapper">
         <!-- Navbar -->
@@ -46,7 +46,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-{{ Auth::user()->mode }}-primary elevation-4">
             <!-- Brand Logo -->
 
             <!-- Sidebar -->
@@ -100,7 +100,7 @@
         <!-- /.content-wrapper -->
 
         <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
+        <aside class="control-sidebar control-sidebar-{{ Auth::user()->mode }}">
             <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->

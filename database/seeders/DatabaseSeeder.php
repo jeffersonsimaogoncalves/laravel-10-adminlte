@@ -30,9 +30,5 @@ class DatabaseSeeder extends Seeder
             'email' => 'testuser@gmail.com',
             'password' => bcrypt('password'),
         ])->assignRole($user);
-
-        \App\Models\UiMode::create([
-            'mode'=>'light',
-        ]);
     }
 }

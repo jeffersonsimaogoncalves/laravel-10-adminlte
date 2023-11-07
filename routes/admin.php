@@ -14,5 +14,4 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::resource('user',UserController::class);
     Route::resource('role',RoleController::class);
     Route::resource('permission',PermissionController::class);
-    Route::post('ui-mode',[ProfileController::class,'uiupdate'])->name('uiupdate');
 });
