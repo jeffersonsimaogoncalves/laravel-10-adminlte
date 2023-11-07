@@ -20,7 +20,7 @@
         <div class="form-group">
             <div class="flex items-center gap-4">
                 <button class="btn btn-primary btn-sm" type="submit">{{ __('Save') }}</button>
-                @if (session('status') === 'password-updated')
+                @if (session('status') === 'ui-mode')
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ 'Saved' }}
                         <button type="button" class="btn btn-sm float-end float-right"
