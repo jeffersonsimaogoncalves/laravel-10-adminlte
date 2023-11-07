@@ -21,7 +21,7 @@
             <div class="flex items-center gap-4">
                 <button class="btn btn-primary btn-sm" type="submit">{{ __('Save') }}</button>
                 @if (session('status') === 'ui-mode')
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
                         {{ 'Saved' }}
                         <button type="button" class="btn btn-sm float-end float-right"
                             data-bs-dismiss="alert" aria-label="Close">&times;</button>
