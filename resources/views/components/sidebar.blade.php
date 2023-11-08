@@ -43,7 +43,7 @@
         </li>
         <li class="nav-item">
             <a href="{{ route('admin.subcategory.index') }}" class="nav-link {{ Route::is('admin.subcategory.index') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-list-alt"></i>
+                <i class="nav-icon fas fa-list"></i>
                 <p>
                     Sub Category
                 </p>
