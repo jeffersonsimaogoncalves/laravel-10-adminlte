@@ -9,7 +9,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,24 +92,16 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
             <!-- Main content -->
             <section class="content">
                 <x-alert />
                 <!-- Default box -->
                 {{ $slot }}
                 <!-- /.card -->
-
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-{{ Auth::user()->mode }}">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 

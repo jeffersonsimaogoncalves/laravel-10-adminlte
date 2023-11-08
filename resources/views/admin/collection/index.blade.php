@@ -24,7 +24,7 @@
                         <tr>
                             <td>
                                 <img src="{{ asset('collection-image/' . $collection->image) }}"
-                                    alt="{{ $collection->name }}" class="img-th">
+                                    alt="{{ $collection->name }}" class="img-th" loading="lazy">
                             </td>
                             <td>{{ $collection->name }}</td>
                             <td>{{ $collection->category->name }}</td>
