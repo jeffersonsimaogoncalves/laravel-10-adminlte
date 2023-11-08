@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\SubCateoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
@@ -16,4 +17,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::resource('role',RoleController::class);
     Route::resource('permission',PermissionController::class);
     Route::resource('category',CategoryController::class);
+    Route::resource('subcategory',SubCateoryController::class);
 });
