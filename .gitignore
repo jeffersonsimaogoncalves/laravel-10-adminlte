@@ -17,3 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+./collection-image
+collection-image
+./collection-pdf
+collection-pdf

@@ -49,5 +49,13 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.collection.index') }}" class="nav-link {{ Route::is('admin.collection.index') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-file-pdf"></i>
+                <p>
+                    Collection
+                </p>
+            </a>
+        </li>
     </ul>
 </nav>
