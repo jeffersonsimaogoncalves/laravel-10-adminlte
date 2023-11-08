@@ -35,6 +35,8 @@
                 </tbody>
             </table>
         </div>
-
+        <div class="card-footer clearfix float-right">
+                {!! $data->links() !!}
+        </div>
     </div>
 </x-admin>

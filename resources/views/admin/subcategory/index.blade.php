@@ -24,7 +24,8 @@
                             <td><a href="{{ route('admin.subcategory.edit', encrypt($cat->id)) }}"
                                     class="btn btn-sm btn-primary">Edit</a></td>
                             <td>
-                                <form action="{{ route('admin.subcategory.destroy', encrypt($cat->id)) }}" method="POST" onsubmit="return confirm('Are sure want to delete?')">
+                                <form action="{{ route('admin.subcategory.destroy', encrypt($cat->id)) }}"
+                                    method="POST" onsubmit="return confirm('Are sure want to delete?')">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
@@ -35,6 +36,8 @@
                 </tbody>
             </table>
         </div>
-
+        <div class="card-footer clearfix">
+            {!! $data->links() !!}
+        </div>
     </div>
 </x-admin>
