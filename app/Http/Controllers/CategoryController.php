@@ -47,17 +47,6 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success','Category created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($category)
     {
         $data = Category::where('id',decrypt($category))->first();
@@ -88,9 +77,6 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success','Category updated successfully.');   
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         Category::where('id',decrypt($id))->delete();
