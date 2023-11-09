@@ -35,10 +35,10 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-- Now migrate the database tables.
+- Now migrate the tables & seed the database.
 
 ```php
-php artisan migrate
+php artisan migrate --seed
 ```
 
 - We are done here. Now you have to just serve your project.
