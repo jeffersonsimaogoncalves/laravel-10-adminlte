@@ -65,6 +65,8 @@ php artisan serve
 
 - Added the collection Module for PDFs.
 
+- Added the Country, State & city seeder with the relationship
+
 - if you want to use the admin side but you have no idea about component & how here things are work. so that you just have to create file & put your code.
 
 
