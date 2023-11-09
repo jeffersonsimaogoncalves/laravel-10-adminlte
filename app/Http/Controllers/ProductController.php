@@ -81,19 +81,19 @@ class ProductController extends Controller
 
         $product->save();
 
-        if ($request->file('product_images')) {
-            foreach ($request->file('product_images') as $sliderImage) {
-                $destinationPath = 'product-slider-images/';
-                $sliderProfileImage = $uniqueSlug . 'product-slider-image' . '.' . $sliderImage->getClientOriginalExtension();
-                $sliderImage->move($destinationPath, $sliderProfileImage);
-        
-                $productImage = new ProductImage();
-                $productImage->image = $sliderProfileImage;
-                $productImage->product_id = $product->id;
-                $productImage->save();
+        // Product slider image or external css
+        $productId = $product->id;
+        if ($request->hasFile('product_images')) {
+            foreach ($request->file('product_images') as $image) {
+                $realImage = $uniqueSlug . "-" . rand(1, 9999) . "-" . date('d-m-Y-h-s') . "." . $image->getClientOriginalExtension();
+                $path = $image->move('product-slider-images', $realImage);
+                ProductImage::create([
+                    'product_id' => $productId,
+                    'image' => $realImage,
+                ]);
             }
         }
-        
+
 
         return redirect()->route('admin.product.index')->with('success', 'Product created successfully.');
     }
@@ -121,16 +121,93 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'collection' => 'required',
+            'category' => 'required',
+            'subcategory' => 'required',
+        ]);
+        $baseSlug = Str::slug($request->name);
+        $uniqueSlug = $baseSlug;
+        $counter = 1;
+        while (Product::where('slug', $uniqueSlug)->where('id', '!=', $request->id)->exists()) {
+            $uniqueSlug = $baseSlug . '-' . $counter;
+            $counter++;
+        }
+        $product = Product::find($request->id);
+        $product->name = $request->name;
+        $product->collection_id = $request->collection;
+        $product->category_id = $request->category;
+        $product->sub_category_id = $request->subcategory;
+        $product->slug = $uniqueSlug;
+        if ($real_image = $request->file('image')) {
+            // Old Image remove
+            $product = Product::where('id', $request->id)->first();
+            $image_path = public_path('product-image/' . $product->image);
+            if (file_exists($image_path)) {
+                unlink($image_path);
+            }
+            // Added new image
+            $productRealImage = 'product-image/';
+            $realImage = $request->slug . "." . $real_image->getClientOriginalExtension();
+            $real_image->move($productRealImage, $realImage);
+            $product->image = $realImage;
+        }
+        $product->save();
+        $productId = $product->id;
+        if ($request->hasFile('image')) {
+            foreach ($request->file('image') as $image) {
+                $realImage = $request->slug . "-" . rand(1, 9999) . "-" . date('d-m-Y-h-s') . "." . $image->getClientOriginalExtension();
+                $path = $image->move('product-slider-images', $realImage);
+                ProductImage::create([
+                    'product_id' => $productId,
+                    'image' => $realImage,
+                ]);
+            }
+        }
+
+        return redirect()->route('admin.product.index')->with('success', 'Product created successfully');
     }
 
     /**
+     * Remove the external image.
+     */
+    public function removeImage($id)
+    {
+        $product = ProductImage::where('id', $id)->first();
+        $image_path = public_path('product-slider-images/' . $product->image);
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+        $product->delete();
+        return redirect()->back()->with('warning', 'Product image removed successfully.');
+    }
+    /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::where('id', decrypt($id))->first();
+        if ($product) {
+            $image_path = public_path('product-image/' . $product->image);
+            if (file_exists($image_path)) {
+                unlink($image_path);
+                $product->delete();
+            }
+        }
+        $productCollectionId = decrypt($id);
+        $imagesToDelete = ProductImage::where('product_id', $productCollectionId)->get();
+        foreach ($imagesToDelete as $image) {
+            $imagePath = public_path('product-slider-images/' . $image->image);
+            // Delete the record from the database
+            $image->delete();
+            // Unlink (delete) the image from storage
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+        return redirect()->route('admin.product.index')->with('warning', 'Product deleted successfully.');
     }
 }

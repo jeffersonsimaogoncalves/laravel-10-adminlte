@@ -75,7 +75,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="product-images" class="form-label">Product Slider Images</label>
-                                        <input type="file" name="product_images" id="product-images"
+                                        <input type="file" name="product_images[]" id="product-images"
                                             class="form-control" multiple>
                                     </div>
                                 </div>

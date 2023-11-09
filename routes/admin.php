@@ -23,4 +23,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::resource('collection',CollectionController::class);
     Route::resource('product',ProductController::class);
     Route::get('/get/subcategory',[ProductController::class,'getsubcategory'])->name('getsubcategory');
+    Route::get('/remove-external-img/{id}',[ProductController::class,'removeImage'])->name('remove.image');
 });
