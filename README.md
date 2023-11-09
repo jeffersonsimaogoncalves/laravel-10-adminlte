@@ -1,8 +1,8 @@
 <p align="center"><a href="https://github.com/Nihirz/laravel-10-adminlte" target="_blank"><img src="https://adminlte.io/wp-content/uploads/2021/03/logo.png" width="400" alt="Admin LTE Logo"></a></p>
 
-## About Laravel
+## About This Repo
 
-This project is made in Laravel version 10. In this project i used a Admin LTE with breeze installtion. User have not to worry about assetes & folder path for admin side.
+This project is made in Laravel version 10. In this project i used a Admin LTE with breeze installtion. User have not to worry about assetes & folder path for admin side.Created for basic e-commerce project admin.Added the basic modules.
 
 ## Installation & usage
 - For Install you have to clone this repo or you can fire this command as well.
@@ -46,7 +46,27 @@ php artisan migrate --seed
 ```php
 php artisan serve
 ```
+
+- This is the updated code of admin.
+
+# Update
+
+- Added the Light/Dark mode in profile section at top nav.
+
+- Added the Categoy module.
+
+- Added the Subcategory module.
+
+- Added the product module which have basic detail & take multiple images.
+
+- Added the Role Module.
+
+- Added the permission Module.
+
+- Added the collection Module for PDFs.
+
 - if you want to use the admin side but you have no idea about component & how here things are work. so that you just have to create file & put your code.
+
 
 ```php
 <x-admin>
