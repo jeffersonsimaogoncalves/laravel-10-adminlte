@@ -139,7 +139,7 @@ class CollectionController extends Controller
         }
         
         $collection->save();
-        return redirect()->route('admin.collection.index')->with('success', 'Collection updated successfully');
+        return redirect()->route('admin.collection.index')->with('info', 'Collection updated successfully');
         
     }
 
@@ -164,6 +164,6 @@ class CollectionController extends Controller
         }
 
         $collection->delete();
-        return redirect()->route('admin.collection.index')->with('success','Collection deleted successfully.');
+        return redirect()->route('admin.collection.index')->with('error','Collection deleted successfully.');
     }
 }

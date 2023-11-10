@@ -208,6 +208,6 @@ class ProductController extends Controller
                 unlink($imagePath);
             }
         }
-        return redirect()->route('admin.product.index')->with('warning', 'Product deleted successfully.');
+        return redirect()->route('admin.product.index')->with('error', 'Product deleted successfully.');
     }
 }

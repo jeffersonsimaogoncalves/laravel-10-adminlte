@@ -69,6 +69,9 @@ php artisan serve
 
 - if you want to use the admin side but you have no idea about component & how here things are work. so that you just have to create file & put your code.
 
+# Toast
+
+- Added the toastr which have 4 class success, info, warning & error. you can use it own it.
 
 ```php
 <x-admin>

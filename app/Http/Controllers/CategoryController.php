@@ -74,12 +74,12 @@ class CategoryController extends Controller
             'name' => $request->name,
             'slug' => $uniqueSlug,
         ]);
-        return redirect()->route('admin.category.index')->with('success','Category updated successfully.');   
+        return redirect()->route('admin.category.index')->with('info','Category updated successfully.');   
     }
 
     public function destroy($id)
     {
         Category::where('id',decrypt($id))->delete();
-        return redirect()->route('admin.category.index')->with('success','Category deleted successfully.');   
+        return redirect()->route('admin.category.index')->with('error','Category deleted successfully.');   
     }
 }

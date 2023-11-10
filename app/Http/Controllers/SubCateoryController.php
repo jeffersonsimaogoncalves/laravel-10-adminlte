@@ -92,7 +92,7 @@ class SubCateoryController extends Controller
             'slug' => $uniqueSlug,
             'category_id'=>$request->category
         ]);
-        return redirect()->route('admin.subcategory.index')->with('success','SubCateory updated successfully.');   
+        return redirect()->route('admin.subcategory.index')->with('info','SubCateory updated successfully.');   
     }
 
     /**
@@ -101,6 +101,6 @@ class SubCateoryController extends Controller
     public function destroy($id)
     {
         SubCateory::where('id',decrypt($id))->delete();
-        return redirect()->route('admin.subcategory.index')->with('success','SubCateory deleted successfully.');   
+        return redirect()->route('admin.subcategory.index')->with('error','SubCateory deleted successfully.');   
     }
 }
