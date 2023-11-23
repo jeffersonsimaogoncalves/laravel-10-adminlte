@@ -57,7 +57,7 @@
             @endif
         </div>
 
-        <div class="flex items-center pb-4">
+        <div class="flex items-center gap-4">
             <button type="submit" class="btn btn-primary btn-sm mb-3">{{ __('Save') }}</button>
             @if (session('status') === 'profile-updated')
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
