@@ -58,7 +58,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <button type="submit" class="btn btn-primary btn-sm mb-3">{{ __('Save') }}</button>
+            <button type="submit" class="btn btn-primary btn-sm">{{ __('Save') }}</button>
             @if (session('status') === 'profile-updated')
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ 'Saved' }}
