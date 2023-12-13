@@ -2,7 +2,7 @@
 
 ## About This Repo
 
-This project is made in Laravel version 10. In this project i used a Admin LTE with breeze installtion. User have not to worry about assetes & folder path for admin side.Created for basic e-commerce project admin.Added the basic modules.Dont forgot to star this repo.
+This project is made in Laravel version 10. In this project, I used an Admin LTE with a breeze installation. Users do have not to worry about assets & folder paths for the admin side. Created for basic e-commerce project admin.Added the basic modules. Don't forget to give star to this repository ⭐.
 
 ## Installation & usage
 - For Install you have to clone this repo or you can fire this command as well.
